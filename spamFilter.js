@@ -4,7 +4,7 @@ function spamFilter() {
     if ((threads[i].getMessages()[0].getCc() == "<YOUR-EMAIL@gmail.com>" || threads[i].getFirstMessageSubject().search("onfirmation") != -1)
      && threads[i].getMessageCount() == 1){
       var content = threads[i].getMessages()[0].getRawContent().split("\r\n");
-      const regex = /d=NETORG\d{8}\.onmicrosoft\.com/;
+      const regex = /d=NETORG.*\.onmicrosoft\.com/;
       var foundSigned = false
       for (var k=0;k<content.length && !foundSigned;k++)
       {
